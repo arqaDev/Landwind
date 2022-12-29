@@ -1,0 +1,160 @@
+@import './assets/_colors';
+@import './assets/_templates';
+
+.trusted__container {
+    padding: 96px 0;
+    background-color: $whiteColor;
+
+    .trusted__body {
+        @extend %container;
+        display: flex;
+        justify-content: space-between;
+
+        .trusted__info {
+            max-width: 640px;
+            margin-right: 20px;
+            padding: 20px 0;
+
+            .trusted__header {
+                font-weight: 500;
+                font-size: 1.125rem;
+                line-height: 112.5%;
+                color: $purpleColor;
+            }
+            .trusted__title {
+                margin-top: 12px;
+
+                @media (max-width: 425px) {
+                    text-align: center;
+                }
+            }
+            .trusted__text {
+                margin-top: 16px;
+                padding-bottom: 24px;
+                border-bottom: 2px solid #e5e7eb;
+
+                @media (max-width: 425px) {
+                    text-align: center;
+                }
+            }
+            .trusted__links {
+                display: flex;
+                flex-direction: column;
+                flex-wrap: wrap;
+                max-width: 195px;
+                margin-top: 24px;
+                gap: 16px;
+                font-weight: 500;
+                font-size: 1rem;
+                line-height: 100%;
+
+                .trusted__link {
+                    color: $purpleColor;
+                    display: flex;
+                    align-items: center;
+
+                    .trusted__arrow {
+                        width: 16px;
+                        height: 16px;
+                        margin-left: 8px;
+                    }
+                }
+            }
+            
+        }
+
+        .trusted__cards {
+            max-width: 544px;
+            display: grid;
+            grid-template-columns: repeat(2, 256px);
+            row-gap: 32px;
+
+            .trusted__card {
+                max-width: 256px;
+                display: flex;
+                flex-direction: column;
+
+                .card__img {
+                    width: 48px;
+                    height: 48px;
+                    display: flex;
+                    align-items: center;
+
+                    & img {
+                        width: 100%;
+                    }
+                }
+                .card__title {
+                    margin-top: 16px;
+                }
+                .card__text {
+                    margin-top: 8px;
+                }
+            }
+        }
+        
+    }
+}
+
+@media (max-width: 1225px) {
+    .trusted__container {
+        .trusted__body {
+            flex-direction: column;
+    
+            .trusted__info {
+                min-width: 100%;
+            }
+            
+            .trusted__cards {
+                margin-top: 40px;
+                min-width: 100%;
+                display: flex;
+                justify-content: space-between;
+    
+                .trusted__card {
+                    min-width: 150px;
+                }
+                
+                .trusted__card:not(:last-child) {
+                    margin-right: 30px;
+                }
+            }
+        }
+    }
+}
+
+@media (max-width: 768px) {
+    .trusted__container {
+        padding: 24px 0;
+
+        .trusted__body {
+            .trusted__cards {
+                display: grid;
+                grid-template-columns: repeat(2, auto);
+                .trusted__card {
+                    display: flex;
+                    justify-content: center;
+                    align-items: center;
+                    text-align: center;
+                }
+            }
+        }
+    }
+}
+
+@media (max-width: 425px) {
+    .trusted__container {
+        .trusted__body {
+            .trusted__cards {
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                justify-content: center;
+                
+                .trusted__card:not(:last-child) {
+                    margin-right: 0;
+                }
+            }
+        }
+    }
+}

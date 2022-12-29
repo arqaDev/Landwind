@@ -1,0 +1,37 @@
+@import './colors';
+
+@mixin text ($weight, $fz) {
+    font-weight: $weight;
+    font-size: $fz;
+    line-height: 150%;
+    color: $textColor;
+}
+
+@mixin title ($weight, $fz, $lh) {
+    font-weight: $weight;
+    font-size: $fz;
+    line-height: $lh;
+    color: $titleColor;
+}
+
+@mixin arrowUp ($width, $height, $color) {
+    width: $width + px;
+    height: $height + px;
+    display: inline-block;
+    border-left: 3px solid $color;
+    border-bottom: 3px solid $color;
+    transition: 0.3s ease;
+    transform: rotate(-225deg);
+    -webkit-transform: rotate(-225deg);
+}
+
+@mixin arrowDown ($width, $height, $color) {
+    width: $width + px;
+    height: $height + px;
+    display: inline-block;
+    border-left: 3px solid $color;
+    border-bottom: 3px solid $color;
+    transition: 0.3s ease;
+    transform: rotate(45deg);
+    -webkit-transform: rotate(-45deg);
+}

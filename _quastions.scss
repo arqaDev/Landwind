@@ -1,0 +1,109 @@
+@import './assets/_colors';
+@import './assets/_mixins';
+@import './assets/_templates';
+
+.quastions__container {
+    padding: 0 0 96px 0;
+    background-color: $whiteColor;
+
+    @media (max-width: 425px) {
+        padding: 24px 0;
+    }
+
+    .quastions__body {
+        @extend %container;
+        @extend %flexCenter;
+
+        .quastions__content {
+            @extend %flexCenter;
+            flex-direction: column;
+
+            .quastions__title {
+                text-align: center;
+            }
+    
+            .quastions__menu {
+                margin-top: 32px;
+                width: 695px;
+
+                @media (max-width: 768px) {
+                    width: auto;
+                    max-width: 695px;
+                }
+
+                .quastions__item {
+                    &:not(:last-child) {
+                        .quastions__header {
+                            border-bottom: 1px solid #e5e7eb;
+                        }
+                    }
+
+                    .quastions__header {
+                        position: relative;
+                        display: flex;
+                        align-items: center;
+                        justify-content: space-between;
+                        padding: 24px 0;
+                        border-radius: 8px 8px 0px 0px;
+                        cursor: pointer;
+
+                        
+
+                        .header__title {
+                            font-weight: 500;
+                            font-size: 1.125rem;
+                            line-height: 112.5%;
+                            color: $textColor;
+                        }
+
+                        .header__arrow {
+                            @include arrowDown(10, 10, $textColor);
+                            margin-left: 25px;
+
+                            @media (max-width: 440px) {
+                                padding: 0 7px 0 0;
+                            }
+                        }
+
+                        &.show {
+                            .header__title {
+                                color: $titleColor;
+                            }
+
+                            .header__arrow {
+                                @include arrowUp(10, 10, $titleColor);
+                            }
+                        }
+                    }
+                    .quastions__footer {
+                        display: none;
+                        max-width: 655px;
+                        padding: 20px 0;
+                        gap: 6px;
+
+                        &.show {
+                            display: flex;
+                            flex-direction: column;
+                        }
+
+                        .footer__text {
+                            max-width: 655px;
+
+                            .footer__text-link {
+                                & a {
+                                    color: $purpleColor;
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
+
+
+
+
+

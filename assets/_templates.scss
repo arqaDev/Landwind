@@ -1,0 +1,117 @@
+%menuBurger {
+    position: relative;
+    min-width: 30px;
+    min-height: 22px;
+    cursor: pointer;
+
+    & span {
+        position: absolute;
+        background-color: $titleColor;
+        left: 0;
+        top: 9px;
+        width: 100%;
+        height: 2px;
+    }
+
+    &::before,
+    &::after {
+        content: "";
+        position: absolute;
+        left: 0;
+        height: 2px;
+        width: 100%;
+        background-color: $titleColor;
+        transition: 0.3s ease;
+    }
+
+    &::before {
+        top: 0;
+    }
+
+    &::after {
+        bottom: 0;
+    }
+
+    & span {
+        top: 50%;
+        transform: translate(0, -50%);
+    }
+
+    &.active {
+        min-height: 20px;
+    }
+
+    &.active span {
+        transform: scale(0);
+    }
+
+    &.active::before {
+        transform: rotate(45deg);
+        top: 9px;
+    }
+
+    &.active::after {
+        transform: rotate(-45deg);
+        bottom: 9px;
+    }
+}
+
+%company {
+    .company__link {
+        display: flex;
+        align-items: center;
+
+        .company__logo {
+            width: 30px;
+            height: 33px;
+        }
+
+        .company__title {
+            margin-left: 12px;
+            font-weight: 600;
+            font-size: 1.5rem;
+            line-height: 36 / 24 * 100%;
+            color: $titleColor;
+
+            @media (max-width: 430px) {
+                display: none;
+            }
+        }
+    }
+}
+
+%arrowUp {
+    position: absolute;
+    bottom: 0;
+    width: 13px;
+    height: 13px;
+    display: inline-block;
+    border-left: 3px solid $titleColor;
+    border-bottom: 3px solid $titleColor;
+    transition: 0.3s ease;
+    transform: rotate(-225deg);
+    -webkit-transform: rotate(-225deg);
+}
+
+%arrowDown {
+    width: 13px;
+    height: 13px;
+    display: inline-block;
+    border-left: 3px solid $titleColor;
+    border-bottom: 3px solid $titleColor;
+    transition: 0.3s ease;
+    transform: rotate(45deg);
+    -webkit-transform: rotate(-45deg);
+}
+
+%flexCenter {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+%container {
+    max-width: 1320px;  
+    margin: 0 auto;
+    padding: 0 20px;
+}

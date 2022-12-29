@@ -1,0 +1,165 @@
+@import './assets/_colors';
+@import './assets/_templates';
+
+.footer {
+    .footer__container {
+        max-width: 1320px;
+        margin: 0 auto;
+        padding: 64px 20px;
+    
+        .footer-menu__header {
+            display: flex;
+            align-items: center;
+    
+            .footer-menu__arrow-down {
+                position: relative;
+                display: none;
+                border: none;
+                background-color: transparent;
+                width: 21px;
+                height: 21px;
+    
+                & span {
+                    @extend %arrowDown;
+                    
+                    &.reverse {
+                        @extend %arrowUp;
+                    }
+                }
+            }
+        }
+        
+        .footer__nav {
+            display: flex;
+            gap: 100px;
+
+            @media (max-width: 992px) {
+                gap: 50px;
+            }
+
+            @media (max-width: 768px) {
+                display: grid;
+                grid-template-columns: repeat(3, auto);
+            }
+
+            @media (max-width: 668px) {
+                grid-template-columns: repeat(2, auto);
+            }
+        
+            .footer__menu {
+                width: 176px;
+        
+                .footer-menu__title {
+                    font-weight: 600;
+                    font-size: 0.875rem;
+                    line-height: 150%;
+                    color: $titleColor;
+                }
+                
+                .footer__list {
+                    .footer__item {
+                        margin-top: 16px;
+                        
+                        .footer__link {
+                            font-weight: 400;
+                            font-size: 1rem;
+                            line-height: 150%;
+                            color: $textColor;
+                            
+                        }
+                    }
+                }   
+            }
+        }
+    
+        .footer__subscribe {
+            margin: 64px auto 0;
+            @extend %flexCenter;
+            flex-direction: column;
+    
+            .footer__company {
+                @extend %company;
+            }
+        
+            .footer__copyright {
+                margin: 20px 0;
+                text-align: center;
+            }
+        
+            .footer__social-links {
+                @extend %flexCenter;
+                width: 156px;
+                
+                .footer__social-link {
+                    @extend %flexCenter;       
+                    width: 24px;
+    
+                    &:not(:first-child) {
+                        margin-left: 20px;
+                    }
+                }
+            }
+        }
+    }
+}
+
+@media (max-width: 450px) {
+    .footer {
+        .footer__container {
+            .footer__nav {
+                display: block;
+    
+                .footer__menu {
+                    width: 100%;
+                    position: relative;
+    
+                    &:not(:first-child) {
+                        margin-top: 10px;
+                    }
+                    
+                    .footer__list {
+                        display: none;
+                        background-color: $purpleColor;
+    
+                        &.show {
+                            display: block;
+                        }
+    
+                        .footer__item {
+                            margin-top: 0;
+    
+                            &:not(:last-child) {
+                                border-bottom: 1px solid $whiteColor;
+                            }
+    
+                            .footer__link {
+                                display: flex;
+                                width: 100%;
+                                height: 100%;
+                                padding: 16px 12px;
+                                font-weight: 600;
+                                font-size: 1.125rem;
+                                color: $whiteColor;
+    
+                                &:active {
+                                    background-color: $hoverColor;
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+    
+            .footer-menu__header {
+                padding-bottom: 10px;
+                justify-content: space-between;
+                border-bottom: 1px solid rgba(0, 0, 0, 0.2);
+                cursor: pointer;
+    
+                & .footer-menu__arrow-down {
+                    display: flex;
+                }
+            }
+        }
+    }
+}

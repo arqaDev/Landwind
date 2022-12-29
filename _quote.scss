@@ -1,0 +1,75 @@
+@import './assets/_colors';
+@import './assets/_templates';
+
+.quote__container {
+    padding: 96px 0;
+    background-color: $bgcColor;
+
+    @media (max-width: 425px) {
+        padding: 24px 0;
+    }
+
+    .quote__body {
+        @extend %container;
+        display: flex;
+
+        .quote__content {
+            @extend %flexCenter;
+            flex-direction: column;
+            margin: 0 auto;
+            max-width: 712px;
+            
+            .quote__mark {
+                width: 48px;
+                height: 45px;
+
+                & img {
+                    width: 100%;
+                }
+            }
+            .quote__text {
+                margin-top: 24px;
+                font-weight: 600;
+                font-size: 24px;
+                line-height: 162.5%;
+                color: $titleColor;
+            }
+            .quote__footer {
+                display: flex;
+                align-items: center;
+                margin-top: 24px;
+
+                & span {
+                    margin: 0 12px;
+
+                    @media (max-width: 425px) {
+                        margin: 0;
+                    }
+                }
+
+                .quote__avatar {
+                    width: 24px;
+                    height: 24px;
+
+                    & img {
+                        width: 100%;
+                    }
+                }
+                .quote__author {
+                    margin-left: 14px;
+                    font-weight: 600;
+                    font-size: 16px;
+                    line-height: 125%;
+                    color: $titleColor;
+                }
+                .quote__position {
+                    font-weight: 400;
+                    font-size: 14px;
+                    line-height: 125%;
+                    color: $textColor;
+                }
+            }
+            
+        }
+    }
+}

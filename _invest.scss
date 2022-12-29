@@ -1,0 +1,118 @@
+@import './assets/_colors';
+@import './assets/_templates';
+
+.invest__container {
+    padding: 96px 0;
+    background-color: $bgcColor;
+
+    .invest__body {
+        @extend %container;
+
+        .invest__content {
+            display: flex;
+            gap: 64px / 1280px * 100%;
+
+            .invest__info {
+                padding: 25.5px 0;
+                width: 608px;
+
+                .info__header {
+
+                    @media (max-width: 425px) {
+                        text-align: center;
+                    }
+
+                    .info__text {
+                        margin-top: 16px;
+                        padding-bottom: 32px;
+                        border-bottom: 2px solid #e5e7eb;
+                    }
+                }
+                
+                .info__body {
+                    margin-top: 32px;
+
+                    .info__list {
+                        font-weight: 500;
+                        font-size: 16px;
+                        line-height: 150%;
+                        color: $titleColor;
+
+                        .info__item {     
+                            display: flex;
+                            align-items: flex-start;
+
+                            .info__tick-mark {
+                                padding-top: 3px;
+                                margin-right: 8px;
+                                width: 20px;
+                                height: 20px;
+
+                                .info__tick-mark img {
+                                    float: left;
+                                    width: 100%;
+                                }
+                            }
+                        } 
+
+                        .info__item:not(:first-child) {
+                            margin-top: 16px;
+                        }
+                    }
+
+                    .info__sub-text {
+                        margin-top: 24px;
+
+                        @media (max-width: 425px) {
+                            text-align: center;
+                        }
+                    }
+                }  
+            }
+            .invest__picture {
+                width: 608px / 1280px * 100%;
+
+                .invest__img {
+                    padding: 10px;
+                    width: 100%;
+                }
+            }
+        }
+
+        & ._second-content {
+            margin-top: 80px;
+
+            @media (max-width: 992px) {
+                margin-top: 30px;
+            }
+        }
+    }
+}
+
+@media (max-width: 768px) {
+    .invest__container {
+        padding: 24px 0;
+
+        .invest__body {
+            .invest__content{
+                flex-direction: column;
+
+                .invest__info {
+                    width: 100%;
+                    .info__header {
+                        width: 100%;
+                    }
+                }
+
+                .invest__picture {
+                    width: 100%;
+                }
+            }
+
+            & ._second-content {
+                flex-direction: column-reverse;
+            }
+        }
+    }
+}
+

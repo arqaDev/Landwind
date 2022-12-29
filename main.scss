@@ -1,0 +1,81 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap');
+@import './assets/colors';
+@import './assets/mixins';
+@import './_header.scss';
+@import './_footer';
+@import './_mainSection';
+@import './_invest';
+@import './_trusted';
+@import './_quote';
+@import './_tariffs';
+@import './_quastions';
+@import './_freeTrial';
+
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Inter', sans-serif;
+}
+
+body {
+    background-color: #ffffff;
+}
+
+a {
+    text-decoration: none;
+}
+
+button {
+    cursor: pointer;
+}
+
+li {
+    list-style-type: none;
+}
+
+.wrapper {
+    min-height: 100%;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+}
+
+._text1 {
+    @include text(400, 1.25rem);
+}
+
+._text2 {
+    @include text(300, 1.25rem);
+}
+
+._text3 {
+    @include text(300, 1rem);
+}
+
+._text4 {
+    @include text(400, 1.125rem);
+}
+
+._text5 {
+    @include text(400, 1rem);
+}
+
+._title1 {
+    @include title(900, 3.75rem, 100%);
+}
+
+._title2 {
+    @include title(800, 2.25rem, 125%);
+}
+
+._title3 {
+    @include title(700, 1.5rem, 125%);
+}
+
+._title4 {
+    @include title(600, 1.5rem, 150%);
+}
+

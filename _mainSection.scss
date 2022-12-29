@@ -1,0 +1,179 @@
+@import './assets/_colors';
+@import './assets/_mixins';
+@import './assets/_templates';
+
+
+.main-section__container {
+    @extend %container;
+
+    .main-section__body {
+        margin-top: 64px;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+    
+        .main-section__content {
+            max-width: 736px;
+
+            @media (max-width: 1325px) {
+                width: 50%;
+            }
+    
+            .content__title {
+                @include title (900, 3.75rem, 100%);
+            }
+    
+            .content__text {
+                margin-top: 24px;
+            }
+    
+            .content__btns {
+                margin-top: 40px;
+                display: flex;
+                align-items: center;
+    
+                .content__free-trial-btn {
+                    @extend %flexCenter;
+                    font-weight: 500;
+                    font-size: 1rem;
+                    line-height: 150%;
+                    height: 48px;
+                    padding: 12px 20px;
+                    background: $purpleColor;
+                    color: $whiteColor;
+                    border-radius: 8px;
+                    transition: 0.3s ease;
+                    cursor: pointer;
+
+                    &:hover {
+                        background-color: $hoverColor;
+                    }
+                }
+    
+                .content__pricing-btn {
+                    @extend %flexCenter;
+                    font-weight: 500;
+                    font-size: 1rem;
+                    line-height: 150%;
+                    height: 48px;
+                    margin-left: 16px;
+                    padding: 12px 20px;
+                    border: 1px solid #e5e7eb;
+                    border-radius: 8px;
+                    color: #1f2a37;
+                    transition: 0.3s ease;
+
+                    &:hover {
+                        background-color: #1f2a37;
+                        color: $whiteColor;
+                    }
+                }
+            }
+        }
+        
+        .main-section__picture {
+            width: 532px / 1280px * 100%;
+            max-height: 416px;
+            margin-left: 40px;
+    
+            img {
+                width: 100%;
+            }
+        }
+    }
+
+    .main-section__companies {
+        margin: 64px 0 96px 0;
+
+        & .company__list {
+            display: flex;
+            flex-wrap: wrap;
+            align-items: center;
+            justify-content: space-between;
+            width: 100%;
+        }
+    }
+}
+
+@media (max-width: 992px) {
+    .main-section__container {
+        .main-section__companies {
+            display: flex;
+            justify-content: center;
+
+            .company__list {
+                display: grid;
+                grid-template-columns: repeat(3, 33%);
+                row-gap: 40px;
+
+                .company__item {
+                    display: flex;
+                    justify-content: center;
+                }
+            }
+        }
+    }
+}
+
+@media (max-width: 905px) {
+    .main-section__container {
+        .main-section__body {
+            .main-section__content .content__btns {
+                flex-direction: column;
+                align-items: flex-start;
+        
+                .content__pricing-btn {
+                    margin: 15px 0 0 0;
+                }
+            }
+        }
+    }
+}
+
+@media (max-width: 768px) {
+    .main-section__container {
+        .main-section__body {
+            flex-direction: column;
+    
+            .main-section__content {
+                width: 100%;
+            }
+
+            .main-section__picture {
+                margin-top: 40px;
+            }
+        }
+    }
+}
+
+@media (max-width: 580px) {
+    .main-section__container {
+        .main-section__body {
+            .main-section__picture {
+                width: 380px;
+                max-height: 416px;
+            }
+        }
+        
+        .main-section__companies .company__link img{
+            width: 100px;
+        }
+    }
+}
+
+@media (max-width: 426px) {
+    .main-section__container {
+        .main-section__body {
+            .main-section__picture {
+                display: none;
+            }
+        }
+        .main-section__companies {
+            .company__list {
+                grid-template-columns: repeat(2, 50%);
+                row-gap: 30px;
+            }
+        }
+    }
+}
+
